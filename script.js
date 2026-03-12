@@ -8,12 +8,10 @@ const songs = [
 ];
 
 function playSong(){
+  // random pick song
   let random = songs[Math.floor(Math.random()*songs.length)];
-  document.getElementById("player").innerHTML = `
-    <iframe width="560" height="315"
-      src="https://www.youtube.com/embed/${random}?autoplay=1"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>`;
+
+  // open YouTube video in new tab → autoplay works
+  let url = `https://www.youtube.com/watch?v=${random}&autoplay=1`;
+  window.open(url, "_blank");
 }
